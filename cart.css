@@ -1,0 +1,315 @@
+@import url(style.css);
+@import url(product-style.css);
+@import url(product.css);
+
+.cart-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between items */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Optional: Adds separation */
+}
+
+.cart-img {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px;
+}
+
+.cart-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product_name, .product_category, .price {
+    margin: 0;
+}
+
+hr {
+    width: 100%;
+    border: 0.5px solid #ccc;
+}
+
+/* order links */
+.order-links{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 120px;
+}
+
+.order-links a,
+.order-links p{
+    font-weight: bold;
+    color: #6d6d6d;
+}
+
+.order-links .active{
+    color: #c6ad8a;
+}
+
+.order-links p{
+    padding: 0 10px;
+}
+
+/* ------- */
+.border-box{
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.cart-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 180px;
+    display: flex;
+    justify-content: space-between; /* Ensures two equal sections */
+    align-items: flex-start;
+    gap: 40px; /* Space between cart & total bill */
+}
+
+.cart-container {
+    width: 60%; /* Left half for cart items */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-img {
+    width: 120px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.cart-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product_name, .product_category, .price {
+    margin: 0;
+}
+
+hr {
+    width: 100%;
+    border: 0.5px solid #ccc;
+}
+
+/* Styling for the Total Bill section */
+.total-bill {
+    width: 40%; /* Right half for billing details */
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    border-radius: 10px;
+    line-height: 30px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.total-bill h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.total-bill p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.total-bill .checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #c6ad8a;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.total-bill .checkout-btn:hover {
+    background-color: #a78d6a;
+}
+
+/* DELIVERY ADDRESS */
+
+.address{
+    width: 300px;
+    height: 270px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    border: 8px solid #c6ad8a;
+}
+
+.address i {
+    margin-bottom: 20px; /* Adds spacing between the icon and text */
+    color: #6d6d6d;
+}
+
+.address p{
+    color: #6d6d6d;
+}
+
+/* OFFCANVAS */
+
+/* Overlay Background */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Offcanvas Content (Modal Box) */
+.offcanvas-content {
+    background: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+#addressForm input{
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Active Class to Show Modal */
+.offcanvas.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* PROFILE PAGE */
+
+
+.profile-box{
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: 150px;
+}
+
+.heading{
+    font-size: 15px;
+    color: #797878;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.text{
+    font-size: 14px;
+    color: #58595B;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile{
+    width: 100%;
+    border: 1px solid #dddddd;
+    padding: 50px;
+}
+
+.profile input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: #0e0e0e;
+    border: 1px solid #ccc;
+}
+
+.profile .half-input {
+    display: flex;
+    justify-content: space-between; /* Ensures proper spacing */
+    gap: 10px; /* Adds a little space between the inputs */
+}
+
+.profile .half-input .col-md-4 {
+    width: 50%; /* Each input takes up half the available width */
+}
+
+/* save and logout button */
+.profile-btn{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.profile-btn button{
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #c6ad8a;
+}
+
+.profile-btn .profile-logout button{
+    background-color: white;
+    border: 2px solid #a78d6a;
+    color: #a78d6a;
+    font-weight: bold;
+}

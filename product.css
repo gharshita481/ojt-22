@@ -1,0 +1,168 @@
+@import url(product-style.css);
+
+body{
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    top: 90px;
+    width: 90%;
+    height: 150vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    /*background-color: red;*/
+    box-sizing: border-box;
+}
+
+.container .image{
+    width: 100%; /* Allow enough space for the image */
+    height: 100%; /* Full container height */
+    display: flex; /* Flexbox layout for alignment */
+    justify-content: center; /* Center the image horizontally */
+    align-items: flex-start; /* Start image at the top */
+}
+
+.image img {
+    width: 100%; /* Take up full width of the image container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure proper fit without cropping */
+    display: block; /* Remove extra whitespace */
+}
+
+.container .description{
+    position: relative;
+    padding: 50px;
+    width: 100%; /* Allow enough space for description */
+    height: 100%; /* Full container height */
+    display: flex; /* Flexbox layout */
+    justify-content: flex-start; /* Align text/button to the left */
+    align-items: flex-start; /* Start content at the top */
+    flex-direction: column; /* Stack content vertically if needed */
+    /*background-color: lightblue; Debugging background */
+    line-height: 35px;
+}
+
+.container .description h1,
+.container .description h4,
+.container .description p{
+    color: #414141;
+}
+
+.container .btn-group{
+    display: flex; /* Flex layout to make buttons side-by-side */
+    gap: 15px; /* Space between the buttons */
+    width: 100%; /* Keep it responsive */
+}
+
+.container .description .add-btn {
+    flex: 1; /* Equal button width */
+    padding: 15px 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #b69d7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.8s ease;
+}
+
+.cart-btn-form{
+    width: 50%;
+}
+
+.cart-btn-form button{
+    width: 100%;
+}
+
+.container .description .wishlist{
+    background-color: white;
+    color: #b69d7a;
+    border: 2px solid #b69d7a;
+}
+
+.container .description .add-btn:hover {
+    background-color: #917a5a; /* Slightly darker blue on hover */
+    color: white;
+    transform: scale(1.03);
+}
+
+.container .description i{
+    padding-left: 15px;
+}
+
+.container .description .return-info{
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 10px;
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.return-info-icon,.return-info-text{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.prod-desc-box{
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+    line-height: 28px;
+    font-size: 15px;
+}
+
+/* image gallery */
+
+.product-image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 530px;
+    height: 530px; /* Fixed height to ensure uniform size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures all images fit nicely without stretching */
+}
+
+.thumbnail-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: #000;
+}
+

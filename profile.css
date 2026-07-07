@@ -1,0 +1,89 @@
+@import url(style.css);
+@import url(product.css);
+@import url(product-style.css);
+
+.container{
+    width: 80%;
+    margin: 50px 150px;
+}
+
+main{
+    padding: 20px 30px; 
+    border: 1px solid #eeeeee;
+
+}
+
+.heading{
+    color: #a7a9ac;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    line-height: 22.5px;
+}
+
+label{
+    color: #58595b;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    line-height: 22.5px;
+}
+
+input{
+    padding: 10px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #a7a9ac;
+}
+
+hr{
+    border: 1px solid #eee;
+    width: 90%;
+}
+
+/*inner box*/
+
+.inner-container{
+    display: flex;
+}
+
+.box1, .box2{
+    width: 50%;
+}
+
+input{
+    padding: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #a7a9ac;
+}
+
+.save-changes{
+    background-color: #117A7A;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    background-color: #ffffff;
+    color: #E71318;
+    padding: 10px 20px;
+    border: 1px solid #E71318;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}

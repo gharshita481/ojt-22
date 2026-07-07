@@ -1,0 +1,515 @@
+@import url('style.css');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #eeeeee;
+}
+
+li, a, button, .logo {
+	font-family: "Century Gothic", "Lato", sans-serif !important;
+	font-weight: 500;
+	font-size: 16px;
+    background-color: #ffffff;
+	color: #000000;
+	text-decoration: none;
+}
+
+#click {
+	display: none;
+}
+
+header {
+    background-color: #ffffff !important;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 100vw;
+    height: 90px;
+    top: 0;
+    z-index: 1000; /* Higher z-index to stay above other elements */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.nav__links {
+	list-style: none;
+}
+
+.nav__links li {
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.nav__links li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover, .active {
+	color: #c6ad8a;
+}
+
+button {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #c6ad8a;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+.logo {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.menu-btn {
+	color: #000000;
+	display: none;
+	cursor: pointer;
+	padding-left: 10px;
+}
+
+@media (max-width: 1250px) {
+	.nav__links {
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background-color: #ffffff;
+		height: 100vh;
+		width: 100%;
+		display: block;
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.cta {
+		display: inline-flex;
+		position: fixed;
+		bottom: 80px;
+		width: 100vw;
+		left: -100;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+
+
+	#click:not(:checked) ~ .nav__links{
+		left: -100%;
+	}
+	
+	#click:not(:checked) ~ .cta{
+		left: -100%;
+	}
+
+	#click:checked ~ .nav__links {
+		left: 0%;
+	}
+
+	#click:checked ~ .cta{
+		left: 0%;
+	}
+
+	#click:checked ~ .menu-btn i:before {
+		content: "\f00d";
+	}
+
+	.nav__links li {
+		display: block;
+		margin-top: 40px;
+	}
+
+	.menu-btn {
+		display: inline-block;
+	}
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Adjust spacing between icons */
+}
+
+.icon-container a i {
+    color: #c6ad8a; /* Change to your preferred color */
+}
+
+.icon-container a i:hover {
+    transform: scale(1.1); /* Change to hover color */
+    transition: transform 0.1s ease;
+}
+
+/*featured sections*/
+
+.f-section .f-card{
+    width: 400px;
+    background-color: palevioletred;
+    position: relative;
+    top: 300px;
+    margin-bottom: 3em;
+}
+
+/* featured image */
+
+.banner-section {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between the image and text */
+    margin: 100px 12%; /* Positioning */
+}
+
+/* Center align text elements inside the container */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Allow text to take up remaining space */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 15px; /* Offset to move the border above the image */
+    left: 15px; /* Offset to move the border above the image */
+    right: -20px; /* Offset for the right border */
+    bottom: -20px; /* Offset for the bottom border */
+    border: 6px solid #c6ad8a; /* The border styling */
+    z-index: 2; /* Ensure it appears above the image */
+    pointer-events: none; /* Prevent interaction issues */
+}
+
+.image-container img {
+    display: block;
+    width: 400px; /* Fit to the container's width */
+    height: 400px; /* Maintain the aspect ratio */
+    max-width:400px; /* Limit the maximum width of the image */
+    max-height: auto; /* Limit the maximum height of the image */
+    position: relative; /* Required for stacking context */
+    z-index: 1; /* Place the image below the pseudo-element */
+    object-fit: cover; /* Ensures the image fits within the defined bounds */
+}
+
+.banner-text {
+    color: #333; /* Text color */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+}
+
+.text-container p {
+    margin-bottom: 15px; /* Space between paragraph and button */
+}
+
+.text-container a button {
+    color: white;
+    background: #c6ad8a;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px; /* Ensures fully rounded corners */
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Ensure there's no unwanted background */
+.text-container a {
+    display: inline-block;
+}
+
+
+/*product cards*/
+
+main{
+    max-width: 1500px;
+    width: 100%;
+    margin: 5px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+main .card{
+    max-width: 300px;
+    flex-wrap: 1 1 210px;
+    text-align: center;
+    height: 350px;
+    border: none;
+    margin: 20px;
+}
+
+main .card .image{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1%;
+}
+
+main .card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card .caption{
+    padding-left: 0.5em;
+    text-align: left;
+    line-height: 22.5px;
+    height: 25%;
+}
+
+main .caption .product_name, main .caption .price{
+    color: #58595b;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+main .caption .product_category{
+    color: #737577;
+    font-weight: regular;
+    font-size: 14px;
+}
+
+main .card a{
+    width: 50%;
+}
+
+/*  SIDEBAR    */
+
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    top: 85px;
+    left: 0;
+    width: 230px;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+
+/* Sidebar section */
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar .sidebar-section p {
+    font-size: 1rem;
+    color: #303030;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Sidebar links */
+.sidebar-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-section ul li {
+    margin: 10px 0;
+}
+
+.sidebar-section ul li a {
+    text-decoration: none;
+    color: #967a54;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.sidebar-section ul li a:hover {
+    color: #c6ad8a;
+}
+
+/* Sidebar form */
+.sidebar-section form {
+    margin-top: 10px;
+}
+
+.sidebar-section form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.sidebar-section form input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sidebar-section form button {
+    width: 100%;
+    padding: 6px;
+    background-color: #c6ad8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-section form button:hover {
+    background-color: #c6ad8a;
+}
+
+.main-container{
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    gap: 20px; /* Space between divs */
+}
+
+/* Adjust main content for the sidebar */
+.content {
+    margin-left: 0px; /* Adjusted for sidebar width */
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Price Range Section */
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.price-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.price-slider label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.price-slider input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #c6ad8a;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb:hover {
+    background: #8c7548;
+}
+
+.price-slider input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.price-slider button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #c6ad8a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.price-slider button:hover {
+    background-color: #8c7548;
+}
+
+
+input[type="range"] {
+    -webkit-appearance: none; /* Removes default styling */
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #c6ad8a 0%, #ddd 100%); /* Custom track color */
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #c6ad8a; /* Thumb color */
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #8c7548; /* Change thumb color on hover */
+}
+
+input[type="range"]:hover {
+    background: linear-gradient(to right, #8c7548 0%, #ddd 100%); /* Active track color */
+}
